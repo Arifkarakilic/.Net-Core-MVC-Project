@@ -123,6 +123,12 @@
   <data name="Filmlervbgbgvbgbbgbfg" xml:space="preserve">
     <value>vbvbvbvbhnb vbnvb</value>
   </data>
+  <data name="movies" xml:space="preserve">
+    <value>Filmler</value>
+  </data>
+  <data name="searchMovie" xml:space="preserve">
+    <value>Ara</value>
+  </data>
   <data name="yasemin" xml:space="preserve">
     <value>yasemin</value>
   </data>
