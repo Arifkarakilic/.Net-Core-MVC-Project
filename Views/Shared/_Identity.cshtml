@@ -1,0 +1,39 @@
+﻿@inject UserManager<ApplicationUser> UserManager;
+
+@if (!User.Identity.IsAuthenticated)
+{
+    <a class="button-33 " asp-controller="Account" style="min-width:100px;background-color:#7E8F1D" asp-action="Login">
+        Log In
+    </a>
+    <span style="padding: 5px;"></span>
+
+
+    <a class="button-33" asp-controller="Account" asp-action="Register" style="background-color:#1D1D1B">
+        Register
+    </a>
+}
+else
+{
+
+
+
+    <a class="button-33" style="min-width:120px" asp-controller="Orders" asp-action="Index">
+        <i class="bi bi-list"></i> Orders
+    </a>
+    <span style="padding: 5px;"></span>
+    @if (User.IsInRole("Admin"))
+    {
+        <a class="button-33" style="min-width:100px;background-color:#7E8F1D" asp-controller="Account" asp-action="Users">
+            <i class="bi bi-people"></i> Users
+        </a>
+    }
+    <span style="padding: 5px;"></span>
+    <form asp-controller="Account" asp-action="Logout">
+
+        <button class="button-33" style="background-color:red">
+            Logout
+        </button>
+    </form>
+
+}
+

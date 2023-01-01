@@ -1,0 +1,69 @@
+﻿@using eCommerce.Data.ViewModels;
+@model LoginVM;
+
+@{
+    ViewData["Title"] = "Log in to your account";
+}
+
+<!doctype html>
+<html lang="tr">
+<body style="background:#7E8F1D">
+    <section class="vh-100">
+        <div class="container py-5 h-100">
+            <div class="row d-flex justify-content-center align-items-center h-75">
+                <div class="col col-xl-10">
+                    <div class="card" style="border-radius: 1rem;">
+                        <div class="row g-0">
+                            <div class="col-md-6 col-lg-5 align-content-center justify-content-center align-items-center d-flex">
+                                <img src="https://www.paribucineverse.com/Assets/Cgv/assets/images/pc-logo-siyah.png" alt="login form" class="img-fluid" style="border-radius: 1rem 0 0 1rem; margin:auto">
+                            </div>
+                            <div class="col-md-6 col-lg-5 d-flex align-items-center">
+                                <div class="card-body p-4 p-lg-5 text-black">
+
+                                    <form asp-action="Login" method="post">
+                                        <div asp-validation-summary="ModelOnly"></div>
+
+                                        <div class="d-flex justify-content-start mb-3" style="color:black">
+                                            <i class="fas fa-cubes fa-2x me-3"></i>
+                                            <span class="h1 fw-bold mb-0 ">PARİBU CINEVERSE</span>
+                                        </div>
+
+                                        <div class="form-outline ms-3 mb-4">
+                                            @if (ViewData["LoginFlag"] != null)
+                                            {
+                                                <div class="alert  alert-danger">
+                                                    @ViewData["LoginFlag"]
+                                                </div>
+                                            }
+                                            <input asp-for="EmailAddress" required type="email" id="form2Example17" class="form-control form-control-lg" placeholder="Kullanıcı Adı">
+                                            <span asp-validation-for="EmailAddress"></span>
+                                        </div>
+
+                                        <div class="form-group ms-3 mb-4">
+                                            <input asp-for="Password" required type="password" placeholder="*******" class="form-control form-control-lg">
+                                            <span asp-validation-for="Password"></span>
+                                        </div>
+
+                                        
+
+                                     
+
+                                            <button class="button-33 " style="border: 2px solid #7E8F1D; background:#7E8F1D ;width:100%;margin-left: 10px " type="submit">Sıgn In</button>
+
+
+
+
+
+                                    </form>
+
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-A3rJD856KowSb7dwlZdYEkO39Gagi7vIsF0jrRAoQmDKKtQBHUuLZ9AsSv4jD4Xa" crossorigin="anonymous"></script>
+</body>
+</html>

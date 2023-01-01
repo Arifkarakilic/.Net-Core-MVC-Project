@@ -1,0 +1,31 @@
+﻿@model Movie
+
+@{
+    ViewData["Title"] = "Movie details";
+}
+
+<div class=" offset-3" style="margin-top: 10%;">
+   
+    <figure class="movie">
+  <div class="w-25">
+            <img src="@Model.ImageURL" alt="Rambo" class="movie__img">
+  </div>
+  <div class="movie__content">
+    <div class="movie__title">
+                <h1 class="heading__primary  ">  @Model.Name <i class="fas fa-fire"></i></h1>
+      <div class="movie__tag movie__tag--1">#action</div>
+  
+    </div>
+    <p class="movie__description">
+                @Model.Description
+    </p>
+  
+  </div>
+
+        <div class="movie__price">
+            <a class=" text-white text-decoration-none "
+               asp-controller="Orders"
+               asp-action="AddItemToShoppingCart" asp-route-id="@Model.Id"> @Model.Price.ToString("c")</a>
+        </div>
+</figure>
+</div>

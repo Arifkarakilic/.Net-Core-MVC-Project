@@ -1,0 +1,50 @@
+﻿@model IEnumerable<Movie>
+@using Microsoft.AspNetCore.Mvc.Localization
+@inject IViewLocalizer Localizer
+@{
+    ViewData["Title"] = "List of Movies";
+}
+
+<div class="row-container">
+    @foreach (var item in Model)
+    {
+
+
+        <div class="hero-container">
+
+
+
+
+            <div class="main-container">
+
+
+                <div class="poster-container">
+                    @if (User.Identity.IsAuthenticated && User.IsInRole("Admin"))
+                    {
+                        <a class="text-white float-right" asp-action="Edit" asp-route-id="@item.Id"><i class="bi bi-pencil-square text-dark"></i></a>
+                    }
+                    <a asp-action="Details" asp-route-id="@item.Id"><img src="@item.ImageURL" class="poster" /></a>
+                </div>
+                <div class="ticket-container">
+                    <div class="ticket__content">
+                        <h4 class="ticket__movie-title">@item.Name</h4>
+                        <p class="ticket__movie-slogan">
+
+                        </p>
+                        <p class="ticket__current-price">  @item.Price.ToString("c")$</p>
+
+                        <a class="ticket__buy-btn" asp-controller="Orders"
+                       asp-action="AddItemToShoppingCart"
+                       asp-route-id="@item.Id">@Localizer["buyNow"]</a>
+                    </div>
+                </div>
+            </div>
+
+
+        </div>
+
+
+    }
+</div>
+
+@await Html.PartialAsync("_CreateItem", "Movies") 

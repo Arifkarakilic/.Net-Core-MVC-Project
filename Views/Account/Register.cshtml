@@ -1,0 +1,75 @@
+﻿@using eCommerce.Data.ViewModels;
+@model RegisterVM;
+
+@{
+    ViewData["Title"] = "Sign up for a new account";
+}
+
+<!doctype html>
+<html lang="tr">
+<body style="background:#7E8F1D">
+    <section class="vh-100" >
+        <div class="container py-5 h-100">
+            <div class="row d-flex justify-content-center align-items-center h-75">
+                <div class="col col-xl-10">
+                    <div class="card" style="border-radius: 1rem;">
+                        <div class="row g-0">
+
+                            @if (TempData["Error"] != null)
+                            {
+                                <div class="col-md-12 alert alert-danger">
+                                    <span><b>Sorry!</b> - @TempData["Error"] </span>
+                                </div>
+                            }
+                            <div class="col-md-6 col-lg-5 align-content-center justify-content-center align-items-center d-flex">
+                                <img src="https://www.paribucineverse.com/Assets/Cgv/assets/images/pc-logo-siyah.png" alt="login form" class="img-fluid" style="border-radius: 1rem 0 0 1rem; margin:auto">
+                            </div>
+                            <div class="col-md-6 col-lg-5 d-flex align-items-center">
+                                <div class="card-body p-4 p-lg-5 text-black">
+
+                                    <form asp-action="Register">
+                                        <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+
+                                        <div class="form-group">
+                                            <label asp-for="FullName" class="control-label"></label>
+                                            <input asp-for="FullName" class="form-control" />
+                                            <span asp-validation-for="FullName" class="text-danger"></span>
+                                        </div>
+                                        <div class="form-group">
+                                            <label asp-for="EmailAddress" class="control-label"></label>
+                                            <input asp-for="EmailAddress" class="form-control" />
+                                            <span asp-validation-for="EmailAddress" class="text-danger"></span>
+                                        </div>
+                                        <div class="form-group">
+                                            <label asp-for="Password" class="control-label"></label>
+                                            <input asp-for="Password" class="form-control" />
+                                            <span asp-validation-for="Password" class="text-danger"></span>
+                                        </div>
+                                        <div class="form-group">
+                                            <label asp-for="ConfirmPassword" class="control-label"></label>
+                                            <input asp-for="ConfirmPassword" class="form-control" />
+                                            <span asp-validation-for="ConfirmPassword" class="text-danger"></span>
+                                        </div>
+
+                                        <div class="form-group mt-3 ">
+                                            
+                                                <button class="button-33" style="border: 2px solid #7E8F1D; background:#7E8F1D ;width:100% " type="submit">Sıgn Up</button>
+                                              
+                                              
+                                                
+                                           
+                                    
+                                        </div>
+                                    </form>
+
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-A3rJD856KowSb7dwlZdYEkO39Gagi7vIsF0jrRAoQmDKKtQBHUuLZ9AsSv4jD4Xa" crossorigin="anonymous"></script>
+</body>
+</html>
