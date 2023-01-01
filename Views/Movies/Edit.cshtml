@@ -7,13 +7,11 @@
 @{
     ViewData["Title"] = "Update movie";
 }
-@using Microsoft.AspNetCore.Mvc.Localization
-@inject IViewLocalizer Localizer
 
 <div class="row">
     <div class="col-md-8 offset-2">
         <p>
-            <h4 class="col-md-8 offset-5">@Localizer["updateMovie"]</h4>
+            <h4 class="col-md-8 offset-5">Update movie</h4>
         </p>
 
         <div class="row">
@@ -28,22 +26,22 @@
                         </div>
                        
                             <div class="form-group my-2">
-                            <label asp-for="Name" class="control-label">@Localizer["movieName"]</label>
+                                <label asp-for="Name" class="control-label"></label>
                                 <input asp-for="Name" class="form-control" />
                                 <span asp-validation-for="Name" class="text-danger"></span>
                             </div>
                         <div class="form-group my-2">
-                            <label asp-for="StartDate" class="control-label">@Localizer["movieStartDate"]</label>
+                                <label asp-for="StartDate" class="control-label"></label>
                                 <input asp-for="StartDate" type="date" class="form-control" />
                                 <span asp-validation-for="StartDate" class="text-danger"></span>
                             </div>
                         <div class="form-group my-2">
-                            <label asp-for="Price" class="control-label">@Localizer["moviePrice"]</label>
+                                <label asp-for="Price" class="control-label"></label>
                                 <input asp-for="Price" type="number" class="form-control" />
                                 <span asp-validation-for="Price" class="text-danger"></span>
                             </div>
                         <div class="form-group my-2">
-                            <label asp-for="ImageURL" class="control-label">@Localizer["moviePosterUrl"]</label>
+                                <label asp-for="ImageURL" class="control-label"></label>
                                 <input asp-for="ImageURL" class="form-control" />
                                 <span asp-validation-for="ImageURL" class="text-danger"></span>
                             </div>
@@ -55,7 +53,7 @@
                                 <span asp-validation-for="CinemaId" class="text-danger"></span>
                             </div>
                         <div class="form-group my-2">
-                            <label asp-for="MovieCategory" class="control-label">@Localizer["movieCategory"]</label>
+                                <label asp-for="MovieCategory" class="control-label"></label>
                                 <select asp-for="MovieCategory" class="form-control" asp-items="Html.GetEnumSelectList<MovieCategory>()"></select>
                                 <span asp-validation-for="MovieCategory" class="text-danger"></span>
                             </div>
@@ -72,7 +70,7 @@
                    
                         <div class="col-md-12  my-2">
                             <div class="form-group">
-                                <label asp-for="Description" class="control-label">@Localizer["movieDescription"]</label>
+                                <label asp-for="Description" class="control-label"></label>
                                 <textarea asp-for="Description" class="form-control" rows="5"></textarea>
                                 <span asp-validation-for="Description" class="text-danger"></span>
                             </div>
@@ -83,7 +81,7 @@
 
                     <div class="form-group">
                  
-                        <input type="submit" value=@Localizer["movieUpdate"] class="button-33 mt-3" style="width:100%;background:#7E8F1D" />
+                        <input type="submit" value="Update" class="button-33 mt-3" style="width:100%;background:#7E8F1D" />
                     </div>
 
                 </form>

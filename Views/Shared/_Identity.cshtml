@@ -1,4 +1,7 @@
-﻿@inject UserManager<ApplicationUser> UserManager;
+﻿@using Microsoft.AspNetCore.Mvc.Localization
+@inject IViewLocalizer Localizer
+
+@inject UserManager<ApplicationUser> UserManager;
 
 @if (!User.Identity.IsAuthenticated)
 {
@@ -17,13 +20,13 @@ else
 
 
 
-    <a class="button-33" style="min-width:120px" asp-controller="Orders" asp-action="Index">
-        <i class="bi bi-list"></i> Orders
+    <a class="button-33" style="min-width:150px" asp-controller="Orders" asp-action="Index">
+        <i class="bi bi-list"></i> @Localizer["orders"]
     </a>
     <span style="padding: 5px;"></span>
     @if (User.IsInRole("Admin"))
     {
-        <a class="button-33" style="min-width:100px;background-color:#7E8F1D" asp-controller="Account" asp-action="Users">
+        <a class="button-33" style="min-width:200px;background-color:#7E8F1D" asp-controller="Account" asp-action="Users">
             <i class="bi bi-people"></i> Users
         </a>
     }
@@ -31,7 +34,7 @@ else
     <form asp-controller="Account" asp-action="Logout">
 
         <button class="button-33" style="background-color:red">
-            Logout
+            @Localizer["logout"]
         </button>
     </form>
 

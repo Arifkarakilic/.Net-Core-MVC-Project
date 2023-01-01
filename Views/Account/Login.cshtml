@@ -13,6 +13,12 @@
             <div class="row d-flex justify-content-center align-items-center h-75">
                 <div class="col col-xl-10">
                     <div class="card" style="border-radius: 1rem;">
+                        @if (TempData["Error"] != null)
+                        {
+                            <div class="col-md-12 alert alert-danger">
+                                <span><b>Sorry!</b> - @TempData["Error"] </span>
+                            </div>
+                        }
                         <div class="row g-0">
                             <div class="col-md-6 col-lg-5 align-content-center justify-content-center align-items-center d-flex">
                                 <img src="https://www.paribucineverse.com/Assets/Cgv/assets/images/pc-logo-siyah.png" alt="login form" class="img-fluid" style="border-radius: 1rem 0 0 1rem; margin:auto">

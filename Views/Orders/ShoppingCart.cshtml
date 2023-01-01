@@ -1,7 +1,7 @@
 ﻿@using eCommerce.Data.ViewModels;
-@using Microsoft.AspNetCore.Mvc.Localization
 @using eCommerce.Data.Languages
-
+@using Microsoft.AspNetCore.Mvc.Localization
+@inject IViewLocalizer Localizer
 
 
 @model ShoppingCartVM
@@ -13,16 +13,16 @@
 <div class="row">
     <div class="col-md-8 offset-2">
         <div class="text-center">
-            <h2>You shopping cart summary</h2>
+            <h2>@Localizer["head"]</h2>
         </div>
 
         <table class="table">
             <thead>
                 <tr>
-                    <th>Selected amount</th>
-                    <th>Movie</th>
-                    <th>Price</th>
-                    <th>Subtotal</th>
+                    <th>@Localizer["selectedAmount"]</th>
+                    <th>@Localizer["movie"]</th>
+                    <th>@Localizer["price"]</th>
+                    <th>@Localizer["subtotal"]</th>
                     <th></th>
                 </tr>
             </thead>
@@ -51,7 +51,7 @@
             <tfoot>
                 <tr>
                     <td colspan="2"></td>
-                    <td><b>Total:</b></td>
+                    <td><b>@Localizer["total"]:</b></td>
                     <td>
                         @Model.ShoppingCartTotal.ToString("c")
                     </td>
@@ -66,7 +66,7 @@
                     window.location.href = url;" >Öde</button>
                 <span style="padding:5px"></span>
                 <a class="btn btn-outline-success" asp-controller="Movies" asp-action="Index">
-                    Add more items
+                    @Localizer["addMore"]
                 </a>
             </div>
         </div>

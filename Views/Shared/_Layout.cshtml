@@ -23,13 +23,13 @@
                     <span class="navbar-toggler-icon"></span>
                 </button>
                 <div class="navbar-collapse collapse d-sm-inline-flex justify-content-between">
-                    <a class="nav-link text-dark" asp-area="" asp-controller="Movies" asp-action="Index" style="width:200px"><i class="bi bi-film"></i>@Localizer["movies"] </a>
-                   
+                    <a class="nav-link text-dark" asp-area="" asp-controller="Movies" asp-action="Index" style="width:200px"><i class="bi bi-film"></i> @Localizer["movies"]</a>
+
                     </ul>
 
                     <form class="form-inline my-2 my-lg-0  w-100 align-items-center justify-content-center " asp-controller="Movies" asp-action="Filter" style="padding-right: 25px;">
                         <div class="row-container w-100 align-items-center justify-content-center">
-                            <input name="searchString" type="text" class="form-control w-75 " placeholder=@Localizer["searchMovie"] aria-label="Recipient's username" aria-describedby="button-addon2">
+                            <input name="searchString" type="text" class="form-control w-75 " placeholder="Search for a movie..." aria-label="Recipient's username" aria-describedby="button-addon2">
                             <button class="btn btn-dark my-2 my-sm-0" type="submit"><i class="bi bi-search"></i></button>
                         </div>
                     </form>
@@ -39,7 +39,7 @@
                     </ul>
                     <ul class="navbar-nav">
 
-                 
+
                         <div class="dil">
                             @await Html.PartialAsync("SelectCulture")
                         </div>

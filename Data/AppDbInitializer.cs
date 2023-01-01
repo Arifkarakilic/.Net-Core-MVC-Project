@@ -325,24 +325,24 @@ namespace eCommerce.Data
 
                 //Users
                 var userManager = serviceScope.ServiceProvider.GetRequiredService<UserManager<ApplicationUser>>();
-                string adminUserEmail = "admin@etickets.com";
+                string adminUserEmail1 = "b201210029@sakarya.edu.tr";
 
-                var adminUser = await userManager.FindByEmailAsync(adminUserEmail);
+                var adminUser = await userManager.FindByEmailAsync(adminUserEmail1);
                 if (adminUser == null)
                 {
                     var newAdminUser = new ApplicationUser()
                     {
                         FullName = "Admin User",
                         UserName = "admin-user",
-                        Email = adminUserEmail,
+                        Email = adminUserEmail1,
                         EmailConfirmed = true
                     };
-                    await userManager.CreateAsync(newAdminUser, "Coding@1234?");
+                    await userManager.CreateAsync(newAdminUser, "sau");
                     await userManager.AddToRoleAsync(newAdminUser, UserRoles.Admin);
                 }
 
 
-                string appUserEmail = "user@etickets.com";
+                string appUserEmail = "b201210029@sakarya.edu.tr";
 
                 var appUser = await userManager.FindByEmailAsync(appUserEmail);
                 if (appUser == null)
@@ -355,6 +355,40 @@ namespace eCommerce.Data
                         EmailConfirmed = true
                     };
                     await userManager.CreateAsync(newAppUser, "Coding@1234?");
+                    await userManager.AddToRoleAsync(newAppUser, UserRoles.User);
+                }
+
+
+                string adminUserEmail2 = "g191210091@sakarya.edu.tr";
+
+                var adminUser2 = await userManager.FindByEmailAsync(adminUserEmail2);
+                if (adminUser2 == null)
+                {
+                    var newAdminUser = new ApplicationUser()
+                    {
+                        FullName = "Admin User",
+                        UserName = "admin-user",
+                        Email = adminUserEmail2,
+                        EmailConfirmed = true
+                    };
+                    await userManager.CreateAsync(newAdminUser, "sau");
+                    await userManager.AddToRoleAsync(newAdminUser, UserRoles.Admin);
+                }
+
+
+                string appUserEmail2 = "g191210091@sakarya.edu.tr";
+
+                var appUser2 = await userManager.FindByEmailAsync(appUserEmail2);
+                if (appUser2 == null)
+                {
+                    var newAppUser = new ApplicationUser()
+                    {
+                        FullName = "Application User",
+                        UserName = "app-user",
+                        Email = appUserEmail2,
+                        EmailConfirmed = true
+                    };
+                    await userManager.CreateAsync(newAppUser, "sau");
                     await userManager.AddToRoleAsync(newAppUser, UserRoles.User);
                 }
             }
