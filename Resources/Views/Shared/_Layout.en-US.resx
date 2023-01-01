@@ -117,25 +117,10 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
-  <data name="Core6_Internationalization" xml:space="preserve">
-    <value>Core6_Internationalization</value>
-  </data>
-  <data name="etickets" xml:space="preserve">
-    <value>Home</value>
-  </data>
-  <data name="Filmler" xml:space="preserve">
-    <value>Movies</value>
-  </data>
   <data name="movies" xml:space="preserve">
     <value>Movies</value>
   </data>
-  <data name="Privacy" xml:space="preserve">
-    <value>Privacy</value>
-  </data>
   <data name="searchMovie" xml:space="preserve">
     <value>Search</value>
-  </data>
-  <data name="This is the Shawshank Red" xml:space="preserve">
-    <value>cyaseminnnnn</value>
   </data>
 </root>
